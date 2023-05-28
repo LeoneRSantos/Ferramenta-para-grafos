@@ -1,3 +1,4 @@
+package src;
 public class Aresta {
     Vertice verticeUm;
     Vertice verticeDois;
