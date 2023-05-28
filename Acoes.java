@@ -6,6 +6,7 @@ public class Acoes {
     private Grafo g = new Grafo("G");
 
     public void adicionarVertice() {
+        // TODO: adicionar uma verificação pra saber se o vértice já existe
 
         System.out.print("Insira o nome do vértice: ");
         String nomeV = sc.nextLine();
@@ -15,6 +16,7 @@ public class Acoes {
     }
 
     public void adicionarAresta() {
+        // TODO: adicionar uma verificação pra saber se a aresta já existe
         System.out.print("Vértice v1: ");
         String v1 = sc.nextLine();
 
@@ -25,12 +27,16 @@ public class Acoes {
         String aresta = sc.nextLine();
 
         g.adicionarAresta(new Vertice(v1), new Vertice(v2), aresta);
+        g.adicionarVertice(new Vertice(v1));
+        g.adicionarVertice(new Vertice(v2));
     }
 
     public void mostrarGrafo() {
         g.retonarGrafo();
     }
 
+    // TODO: substituir o menu por um reconhecedor de string
+    // TODO: o reconhecedor de string deve reconhecer os comandos inseridos no terminal
     public void mostrarMenu() {
 
         StringBuilder menu = new StringBuilder();
