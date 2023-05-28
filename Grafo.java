@@ -29,6 +29,7 @@ public class Grafo {
         arestas.add(novaAresta);
     }
 
+    // TODO: alterar o nome de 'retornar' para 'mostrar' ou 'exibir'
     public void retonarGrafo() {
         System.out.print("\n\nNo grafo " + getNome() + ": \n");
 
