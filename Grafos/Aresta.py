@@ -1,8 +1,7 @@
 class Aresta:
-   def __init__(self, verticeUm, verticeDois, id):
+   def __init__(self, verticeUm, verticeDois):
       self.setVerticeUm = verticeUm
       self.setVerticeDois = verticeDois
-      self.setId = id
 
    # Getters e setters
    def setVerticeUm(self, verticeUm):
