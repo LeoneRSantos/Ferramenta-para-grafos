@@ -9,13 +9,17 @@ class CarregarGrafos:
         dados = grafos["graphs"]
 
     continuar = True 
+    g1 = Grafo()
 
     while continuar:
 
         comando = str(input('\nGrafos está em execução. Insira um comando\n'))
 
         if comando == 'grafos carregar arquivo.json':
-            
+            for cont in dados:
+                idAtual = cont["id"]
+                for cont2 in idAtual:
+                    g1.adicionarVertices(idAtual['vertices'])
             print('\nO arquivo foi carregado.')
 
         elif comando == 'grafos mostrar grafos':
