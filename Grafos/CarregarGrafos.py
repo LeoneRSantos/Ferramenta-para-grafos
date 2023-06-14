@@ -4,12 +4,7 @@ from Grafo import Grafo
 
 class CarregarGrafos:
 
-    with open('graphs.json') as teste:
-        grafos = json.load(teste)
-        dados = grafos["graphs"]
-
     continuar = True 
-    g1 = Grafo()
 
     def __init__(self):
         self.grafos = []
@@ -23,12 +18,6 @@ class CarregarGrafos:
         except FileNotFoundError:
             print("\nArquivo não econtrado. Verifique se o nome inserido está correto.\n")
 
-        if comando == 'grafos carregar arquivo.json':
-            for cont in dados:
-                idAtual = cont["id"]
-                for cont2 in idAtual:
-                    g1.adicionarVertices(idAtual['vertices'])
-            print('\nO arquivo foi carregado.')
     
     def interpretarString(self, stringInserida):
         if stringInserida[0] == 'grafos':
@@ -43,15 +32,27 @@ class CarregarGrafos:
                 for cont in self.grafos:
                     print('\nGrafo ', cont["id"],  "\nVértices: ", cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
 
-            #     numero = int(input('\nInsira um número ')) 
-        elif comando == 'grafos sair' or comando == 'sair':
-            print('Grafos desligado')
-            continuar = False
         else:
                 print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
 
 
 
+def main():
+
+    carregarGrafos = CarregarGrafos()
+
+    while carregarGrafos.continuar:
+
+        comando = str(input('\nGrafos está em execução. Insira um comando\n'))
+
+        comandoAtual = comando.split()
+
+        carregarGrafos.interpretarString(comandoAtual)
+
+    
+if __name__ == '__main__':
+    main()
+            
 
 
     
