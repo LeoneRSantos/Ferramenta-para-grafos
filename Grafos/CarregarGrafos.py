@@ -11,7 +11,8 @@ class CarregarGrafos:
     continuar = True 
     g1 = Grafo()
 
-    while continuar:
+    def __init__(self):
+        self.grafos = []
 
         comando = str(input('\nGrafos está em execução. Insira um comando\n'))
 
