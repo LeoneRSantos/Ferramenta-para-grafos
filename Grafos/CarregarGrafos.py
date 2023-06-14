@@ -29,25 +29,26 @@ class CarregarGrafos:
                 for cont2 in idAtual:
                     g1.adicionarVertices(idAtual['vertices'])
             print('\nO arquivo foi carregado.')
+    
+    def interpretarString(self, stringInserida):
+        if stringInserida[0] == 'grafos':
+            if len(stringInserida) == 3 and stringInserida[1] == 'carregar':
+                self.carregarArquivoJson(stringInserida[2])
 
-        elif comando == 'grafos mostrar grafos':
-            for g in dados:
-                print('\nGrafo ', g["id"],  "\nVértices: ", g["vertices"], "\nArestas: ", g["edges"], '\n\n')
+            elif stringInserida[1] == 'sair':
+                print('\nGrafos desligado\n')
+                self.continuar = False
 
-            # Pegar o id do grafo
-            # for i in dados:
-            #     if(i["id"] == 1):
-            #         vertices = i["vertices"]
-            #         arestas = i["edges"]
-
-            #         print("Vertices: ", vertices, " arestas: ", arestas)
+            elif stringInserida[1] == 'mostrar' and stringInserida[2] == 'grafos':
+                for cont in self.grafos:
+                    print('\nGrafo ', cont["id"],  "\nVértices: ", cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
 
             #     numero = int(input('\nInsira um número ')) 
         elif comando == 'grafos sair' or comando == 'sair':
             print('Grafos desligado')
             continuar = False
         else:
-            print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
+                print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
 
 
 
