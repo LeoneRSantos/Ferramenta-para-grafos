@@ -14,7 +14,14 @@ class CarregarGrafos:
     def __init__(self):
         self.grafos = []
 
-        comando = str(input('\nGrafos está em execução. Insira um comando\n'))
+    def carregarArquivoJson(self, arquivoJson):
+        try:
+            with open(arquivoJson, 'r') as file:
+                dados = json.load(file)
+                self.grafos = dados['graphs']
+                print("\nGrafos carregados a partir do arquivo ", arquivoJson)
+        except FileNotFoundError:
+            print("\nArquivo não econtrado. Verifique se o nome inserido está correto.\n")
 
         if comando == 'grafos carregar arquivo.json':
             for cont in dados:
