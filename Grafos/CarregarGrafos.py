@@ -1,5 +1,4 @@
 import json
-
 from Grafo import Grafo
 from TiposDeGrafos import verificarMultigrafo 
 from TiposDeGrafos import verificarPseudoGrafo 
@@ -33,6 +32,12 @@ class CarregarGrafos:
             elif stringInserida[1] == 'mostrar' and stringInserida[2] == 'grafos':
                 for cont in self.grafos:
                     print('\nGrafo ', cont["id"],  "\nVértices: ", cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
+
+            elif stringInserida[1] == 'multigrafos':
+                verificarMultigrafo(self.grafos)
+
+            elif stringInserida[1] == 'pseudografos':
+                verificarPseudoGrafo(self.grafos)
 
         else:
                 print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
