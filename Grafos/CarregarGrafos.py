@@ -1,6 +1,8 @@
 import json
 
-from Grafo import Grafo 
+from Grafo import Grafo
+from TiposDeGrafos import verificarMultigrafo 
+from TiposDeGrafos import verificarPseudoGrafo 
 
 class CarregarGrafos:
 
