@@ -14,20 +14,21 @@ class TiposDeGrafos:
         else:
             print('\nNenhum multigrafo encontrado no arquivo')
 
-def verificarPseudoGrafo(grafos):
-    listaDePseudoGrafos = []
+    @staticmethod
+    def verificarPseudoGrafo(listaDeGrafos):
+        listaDePseudoGrafos = []
 
-    for cont in grafos:
-        vertices = cont['vertices']
-        arestas = cont['edges']
+        for cont in listaDeGrafos:
+            vertices = cont['vertices']
+            arestas = cont['edges']
 
-        for aresta in arestas:
-            if aresta[0]==aresta[1] and aresta[0] in vertices:
-                listaDePseudoGrafos.append(cont['id'])
+            for aresta in arestas:
+                if aresta[0]==aresta[1] and aresta[0] in vertices:
+                    listaDePseudoGrafos.append(cont['id'])
 
-    if len(listaDePseudoGrafos) > 0:
-        print('\nPseudografos encontrados: ', listaDePseudoGrafos)
-    
-    else:
-        print('\nNenhum pseudografo encontrado no arquivo.')
+        if len(listaDePseudoGrafos) > 0:
+            print('\nPseudografos encontrados: ', listaDePseudoGrafos)
+        
+        else:
+            print('\nNenhum pseudografo encontrado no arquivo.')
 
