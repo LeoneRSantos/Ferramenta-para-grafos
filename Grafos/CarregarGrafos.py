@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import json
 from Grafo import Grafo
-from TiposDeGrafos import verificarMultigrafo 
-from TiposDeGrafos import verificarPseudoGrafo 
+from TiposDeGrafos import TiposDeGrafos 
 
 class CarregarGrafos:
 
