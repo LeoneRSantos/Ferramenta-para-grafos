@@ -34,10 +34,10 @@ class CarregarGrafos:
                     print('\nGrafo ', cont["id"],  "\nVértices: ", cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
 
             elif stringInserida[1] == 'multigrafos':
-                verificarMultigrafo(self.grafos)
+                TiposDeGrafos.verificarMultigrafo(self.grafos)
 
             elif stringInserida[1] == 'pseudografos':
-                verificarPseudoGrafo(self.grafos)
+                TiposDeGrafos.verificarPseudoGrafo(self.grafos)
 
         else:
                 print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
