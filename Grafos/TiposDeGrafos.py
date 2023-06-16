@@ -1,5 +1,8 @@
-def verificarMultigrafo(grafos):
-    listaDeMultigrafos = []
+class TiposDeGrafos:
+
+    @staticmethod
+    def verificarMultigrafo(listaDeGrafos):
+        listaDeMultigrafos = []
 
     for cont in grafos:
         arestas = [tuple(aresta) for aresta in cont['edges']]
