@@ -4,12 +4,12 @@ class TiposDeGrafos:
     def verificarMultigrafo(listaDeGrafos):
         listaDeMultigrafos = []
 
-    for cont in grafos:
-        arestas = [tuple(aresta) for aresta in cont['edges']]
-        if len(cont['edges']) != len(set(arestas)):
-            listaDeMultigrafos.append(cont['id']) 
-    if len(listaDeMultigrafos) > 0:
-        print('\nMultigrafos encontrados:\n', listaDeMultigrafos, '\n')
+        for cont in listaDeGrafos:
+            arestas = [tuple(aresta) for aresta in cont['edges']]
+            if len(cont['edges']) != len(set(arestas)):
+                listaDeMultigrafos.append(cont['id']) 
+        if len(listaDeMultigrafos) > 0:
+            print('\nMultigrafos encontrados:\n', listaDeMultigrafos, '\n')
 
     else:
         print('\nNenhum multigrafo encontrado no arquivo')
