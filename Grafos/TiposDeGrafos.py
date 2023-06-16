@@ -11,8 +11,8 @@ class TiposDeGrafos:
         if len(listaDeMultigrafos) > 0:
             print('\nMultigrafos encontrados:\n', listaDeMultigrafos, '\n')
 
-    else:
-        print('\nNenhum multigrafo encontrado no arquivo')
+        else:
+            print('\nNenhum multigrafo encontrado no arquivo')
 
 def verificarPseudoGrafo(grafos):
     listaDePseudoGrafos = []
