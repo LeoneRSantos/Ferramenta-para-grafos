@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import json
 from Grafo import Grafo
-from TiposDeGrafos import TiposDeGrafos 
+from TiposDeGrafos import TiposDeGrafos
+from Graus import Graus
+
 
 class CarregarGrafos:
 
