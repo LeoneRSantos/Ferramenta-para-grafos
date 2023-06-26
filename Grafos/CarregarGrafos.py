@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import json
-from Grafo import Grafo
 from TiposDeGrafos import TiposDeGrafos
 from Graus import Graus
 
@@ -21,7 +20,6 @@ class CarregarGrafos:
         except FileNotFoundError:
             print("\nArquivo não econtrado. Verifique se o nome inserido está correto.\n")
 
-    
     def interpretarString(self, stringInserida):
         if stringInserida[0] == 'grafos':
             if len(stringInserida) == 3 and stringInserida[1] == 'carregar':
@@ -78,7 +76,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-            
-
-
-    
