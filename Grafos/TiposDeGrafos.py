@@ -49,3 +49,36 @@ class TiposDeGrafos:
                     verticesAlcancaveis.add(aresta[0])
                     queue.append(aresta[0])
         return len(verticesAlcancaveis) == len(vertices) 
+
+    @staticmethod
+    def verificarDesconexo(grafos):
+        listaDeGrafosDesconexos = []
+        for graph in grafos:
+            vertices = graph['vertices']
+            arestas = graph['edges']
+            if not TiposDeGrafos.verificarConexao(vertices, arestas):
+                listaDeGrafosDesconexos.append(graph['id'])
+        if listaDeGrafosDesconexos:
+            print("\nGrafos desconexos encontrados: ", listaDeGrafosDesconexos)
+        else:
+            print("\nNenhum grafo desconexo encontrado no arquivo.")
+
+    @staticmethod
+    def verificarSeEstaCompleto(vertices, arestas):
+        if not vertices:
+            return False
+        quantidadeDeArestas = len(vertices) * (len(vertices) - 1) // 2
+        return len(arestas) == quantidadeDeArestas
+    
+    @staticmethod
+    def verificarGrafosCompletos(grafos):
+        listaDeGrafosCompletos = []
+        for grafo in grafos:
+            vertices = grafo['vertices']
+            arestas = grafo['edges']
+            if TiposDeGrafos.verificarSeEstaCompleto(vertices, arestas):
+                listaDeGrafosCompletos.append(grafo['id'])
+        if listaDeGrafosCompletos:
+            print("\nGrafos completos encontrados: ", listaDeGrafosCompletos)
+        else:
+            print("\nNenhum grafo completo encontrado.")
