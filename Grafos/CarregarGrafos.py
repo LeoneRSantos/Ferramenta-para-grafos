@@ -7,7 +7,7 @@ from Graus import Graus
 
 class CarregarGrafos:
 
-    continuar = True 
+    continuar = True
 
     def __init__(self):
         self.grafos = []
@@ -33,7 +33,8 @@ class CarregarGrafos:
 
             elif stringInserida[1] == 'mostrar' and stringInserida[2] == 'grafos':
                 for cont in self.grafos:
-                    print('\nGrafo ', cont["id"],  "\nVértices: ", cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
+                    print('\nGrafo ', cont["id"],  "\nVértices: ",
+                          cont["vertices"], "\nArestas: ", cont["edges"], '\n\n')
 
             elif stringInserida[1] == 'multigrafos':
                 TiposDeGrafos.verificarMultigrafo(self.grafos)
