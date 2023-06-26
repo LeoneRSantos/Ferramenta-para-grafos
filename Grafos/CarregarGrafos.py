@@ -43,8 +43,8 @@ class CarregarGrafos:
                 TiposDeGrafos.verificarPseudoGrafo(self.grafos)
 
         else:
-                print('\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
-
+            print(
+                '\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
 
 
 def main():
@@ -59,7 +59,7 @@ def main():
 
         carregarGrafos.interpretarString(comandoAtual)
 
-    
+
 if __name__ == '__main__':
     main()
             
