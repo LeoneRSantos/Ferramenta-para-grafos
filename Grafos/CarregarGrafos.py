@@ -42,6 +42,22 @@ class CarregarGrafos:
             elif stringInserida[1] == 'pseudografos':
                 TiposDeGrafos.verificarPseudoGrafo(self.grafos)
 
+            elif stringInserida[1] == 'desconexos':
+                TiposDeGrafos.verificarDesconexo(self.grafos)
+
+            elif stringInserida[1] == 'completos':
+                TiposDeGrafos.verificarGrafosCompletos(self.grafos)
+
+            elif stringInserida[1] == 'graus' and len(stringInserida) == 3:
+                idDoGrafo = int(stringInserida[2].split('=')[1])
+                Graus.encontrarOsGrausDosVertices(self.grafos, idDoGrafo)
+
+            elif stringInserida[1] == 'grau' and len(stringInserida) == 4:
+                idDoGrafo = int(stringInserida[2].split('=')[1])
+                vertice = stringInserida[3].split('=')[1].strip('"')
+                Graus.encontrarOGrauDoVertice(self.grafos, idDoGrafo, vertice)
+
+
         else:
             print(
                 '\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
