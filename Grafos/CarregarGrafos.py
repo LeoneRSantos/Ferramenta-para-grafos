@@ -2,6 +2,8 @@
 import json
 from TiposDeGrafos import TiposDeGrafos
 from Graus import Graus
+from Passeio import Passeio
+from Busca import Busca
 
 
 class CarregarGrafos:
@@ -54,6 +56,32 @@ class CarregarGrafos:
                 idDoGrafo = int(stringInserida[2].split('=')[1])
                 vertice = stringInserida[3].split('=')[1].strip('"')
                 Graus.encontrarOGrauDoVertice(self.grafos, idDoGrafo, vertice)
+
+            elif stringInserida[1]=='alcancaveis' and len(stringInserida) ==4:
+                id = int(stringInserida[2].split('=')[1])
+                verticeInicial = stringInserida[3].split('=')[1].strip("'").strip('"')
+                Passeio.encontrarVerticesAlcancaveis(self.grafos, id, verticeInicial)
+
+            elif stringInserida[1] == 'inalcancaveis' and len(stringInserida) == 4:
+                id = int(stringInserida[2].split('=')[1])
+                verticeInicial = stringInserida[3].split('=')[1].strip("'").strip('"')
+                Passeio.encontrarVerticesInalcancaveis(self.grafos, id, verticeInicial)
+
+            elif stringInserida[1] == 'bfs' and len(stringInserida) == 5:
+                id = int(stringInserida[2].split('=')[1])
+                verticeInicial = stringInserida[3].split('=')[1].strip('"')
+                verticeFinal = stringInserida[4].split('=')[1].strip('"')
+                Busca.bfs(self.grafos, id, verticeInicial, verticeFinal)
+
+            elif stringInserida[1] == 'dfs' and len(stringInserida) == 5:
+                id = int(stringInserida[2].split('=')[1])
+                verticeInicial = stringInserida[3].split('=')[1].strip('"')
+                verticeFinal = stringInserida[4].split('=')[1].strip('"')
+                Busca.dfs(self.grafos, id, verticeInicial, verticeFinal)
+
+            else:
+                print(
+                '\nComando não reconhecido, verifique se o comando foi digitado corretamente.')
 
 
         else:
