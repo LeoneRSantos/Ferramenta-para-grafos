@@ -45,7 +45,7 @@ class Busca:
                     path = pilha.pop()
                     verticeAtual = path[-1]
                     if verticeAtual == verticeFinal:
-                        print("DFS path from", verticeInicial, "to", verticeFinal, "in graph", idDoGrafo, "is:", path)
+                        print("\nNo grafo", idDoGrafo, ", DFS a partir de",verticeInicial, "até", verticeFinal, ":", path)
                         return
                     if verticeAtual in visitado:
                         continue
@@ -59,6 +59,6 @@ class Busca:
                             new_path = list(path)
                             new_path.append(aresta[0])
                             pilha.append(new_path)
-                print("No DFS path found from", verticeInicial, "to", verticeFinal, "in graph", idDoGrafo)
+                print("\nNenhum vértice encontrado através de DFS partindo de", verticeInicial, "até", verticeFinal)
                 return
-        print("Graph not found:", idDoGrafo)
+        print("\nNenhum vértice encontrado através de DFS partindo de", verticeInicial, "até", verticeFinal)
