@@ -10,13 +10,13 @@ class Passeio:
                 fila = [verticeInicial]
                 while fila:
                     verticeAtual = fila.pop(0)
-                    for arestas in arestas:
-                        if arestas[0] == verticeAtual and arestas[1] not in verticeAlcancavel:
-                            verticeAlcancavel.append(arestas[1])
-                            fila.append(arestas[1])
-                        elif arestas[1] == verticeAtual and arestas[0] not in verticeAlcancavel:
-                            verticeAlcancavel.append(arestas[0])
-                            fila.append(arestas[0])
+                    for aresta in arestas:
+                        if aresta[0] == verticeAtual and aresta[1] not in verticeAlcancavel:
+                            verticeAlcancavel.append(aresta[1])
+                            fila.append(aresta[1])
+                        elif aresta[1] == verticeAtual and aresta[0] not in verticeAlcancavel:
+                            verticeAlcancavel.append(aresta[0])
+                            fila.append(aresta[0])
                 print("\nNo grafo ", idDoGrafo, ":\nVértices alcançáveis a partir de ", verticeInicial, ": ", verticeAlcancavel)
                 return
         print("\nNenhum vértice alcançável a partir de ", verticeInicial, " no grafo " ,idDoGrafo)
